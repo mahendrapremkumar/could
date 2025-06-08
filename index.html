@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="could">
+
+        </div>
+    </div>
+    <script>
+        function rain()
+        {
+            let could = document.querySelector('.could');
+            let e = document.createElement('div')
+            let left = Math.floor(Math.random() * 310);
+            let width = Math.random() * 4;
+            let height = Math.random() * 50;
+             let duration = Math.random() * 0.5;
+
+            e.classList.add('drop');
+            could.appendChild(e);
+            e.style.left = left + 'px';
+            e.style.width = 0.5 + width + 'px';
+            e.style.height = 0.5 + height + 'px';
+            e.style.animationDuration = 1 + duration + 's';
+
+            
+            setTimeout(function(){
+            could.removeChild(e)
+            },2000)
+        }
+        
+
+        setInterval(function(){
+            rain()
+        },20);
+    </script>
+</body>
+</html>
